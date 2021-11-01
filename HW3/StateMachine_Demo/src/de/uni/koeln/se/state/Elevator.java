@@ -42,25 +42,36 @@ public class Elevator{
 	
 	public void goDown() {
 		State.Current_State = State.Moving_down;
-		String num = "";
 		for (int i = current_Floor; i > dest_Floor ; i--) {
-			if (i == 1) {num = "st";}
-			else if (i == 2) {num = "nd";}
-			else if (i == 3) {num = "rd";}
-			else if (i == 0) {num = "";}
-			else {num = "th";}
-				System.out.println(State.Current_State + " to " + i + num + " Floor");
+				System.out.println(State.Current_State + " to " + i + getEnding(i) + " Floor");
 			}
-		if (dest_Floor == 1) {num = "st";}
-		else if (dest_Floor == 2) {num = "nd";}
-		else if (dest_Floor == 3) {num = "rd";}
-		else if (dest_Floor == 0) {num = "";}
-		else {num = "th";}
-		System.out.println("Arriving " + dest_Floor + num + " Floor");
+		System.out.println("Arriving " + dest_Floor + getEnding(dest_Floor) + " Floor");
 	}
 	
 	public void stayIdle() {
 		
 		System.out.println("... " + State.Current_State + " Current Floor: " + dest_Floor);
+	}
+	
+	/**
+	 * this method compute the ordinal number of the given floor.
+	 * @param floor (integer) is the current floor we want to compute the ordinal number for.
+	 * @return the ending of the ordinal number in String
+	 */
+	private String getEnding (int floor) {
+		String output = "";	
+		switch (floor) {
+			case 0: output = "";
+			break;
+			case 1: output = "st";
+			break;
+			case 2: output = "nd";
+			break;
+			case 3: output = "rd";
+			break;
+			default: output = "th";
+		}
+	
+		return output;
 	}
 }
