@@ -32,7 +32,7 @@ public  Integer getTotalPrice() {
 	return totalPrice;
 }
 
-public static void setTotalPrice(Integer totalPrice) {
+public void setTotalPrice(Integer totalPrice) {
 	ShoppingBasket.totalPrice = totalPrice;
 }
 
