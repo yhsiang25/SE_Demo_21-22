@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class ShoppingBasket {
 	public static Items item_list=new Items();
-	private static Integer totalPrice=0;
+	private static Integer totalPrice = 0;
 	
 
 	ArrayList<String> MyItems=new ArrayList<String>();
@@ -32,7 +32,7 @@ public  Integer getTotalPrice() {
 	return totalPrice;
 }
 
-public  void setTotalPrice(Integer totalPrice) {
+public static void setTotalPrice(Integer totalPrice) {
 	ShoppingBasket.totalPrice = totalPrice;
 }
 
